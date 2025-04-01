@@ -12,7 +12,7 @@ body {
     display: none;
 }
 
-/* Tela de login com fundo rosa */
+/* Tela de login */
 #login-screen {
     background: #e91e63;
     padding: 20px;
@@ -22,7 +22,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Tela de pedidos com fundo branco */
+/* Tela de pedidos */
 #pedido-screen {
     background: white;
     padding: 20px;
@@ -52,7 +52,6 @@ button:hover {
 
 table {
     width: 100%;
-    margin: 20px auto;
     border-collapse: collapse;
 }
 
@@ -60,6 +59,7 @@ th, td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
+    word-wrap: break-word; /* Evita que textos longos quebrem o layout */
 }
 
 th {
@@ -71,71 +71,20 @@ input[type="number"] {
     width: 60px;
 }
 
+/* Cor vermelha para produtos indisponíveis */
 .indisponivel {
     color: red;
     font-weight: bold;
 }
 
-.imagem-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Ajustando o tamanho da imagem */
 .logo-imagem {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
 }
 
-.legenda {
-    font-size: 18px;
-    font-weight: normal;
-    color: white;
-}
-
-.titulo {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.cidade {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.montar-pedido {
-    font-size: 14px;
-}
-
-.quantidade-minima {
-    width: 80px;
-}
-
-.produto-nome {
-    width: auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.container-montar-pedido {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.container-montar-pedido {
-    min-height: 500px;
-}
-
-.montar-pedido {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* Ajustes para telas menores */
+/* Ajustes responsivos */
 @media (max-width: 768px) {
     #login-screen, #pedido-screen {
         width: 95%;
@@ -149,9 +98,7 @@ input[type="number"] {
 
     table {
         width: 100%;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        display: table; /* Mantém a estrutura sem precisar de rolagem horizontal */
     }
 
     th, td {
@@ -161,10 +108,5 @@ input[type="number"] {
 
     input[type="number"] {
         width: 50px;
-    }
-
-    .logo-imagem {
-        max-width: 100%;
-        height: auto;
     }
 }
